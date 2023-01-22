@@ -1,0 +1,26 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: linear-gradient(#f34b4b, #9198e5);
+}
+
+.cardcontent {
+  padding: 15px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.cardcontent h2 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.cardcontent div {
+  padding-bottom: 10px;
+  height: auto;
+}
