@@ -1,5 +1,7 @@
 import Head from "next/head";
 import styles from "./page.module.scss";
+import fetch from 'cross-fetch';
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -22,7 +24,7 @@ const port = process.env.PORT || 5000;
 
 const link = from([
   errorLink,
-  new HttpLink({ uri: `http://localhost:${port}/graphql` }),
+  new HttpLink({ uri: `http://localhost:${port}/graphql`, fetch }),
 ]);
 
 const client = new ApolloClient({
@@ -40,7 +42,7 @@ function Home() {
         </Head>
         <main className={styles.main}>
           <div className={styles.description}>
-            <h1>People Data List</h1>
+            <h1 data-testid='title'>People Data List</h1>
           </div>
           <GetUsers />
         </main>
